@@ -25,6 +25,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -107,73 +108,94 @@ ion-icon {
 /* end of Global styles */
 
 /* header */
-.header {
-  min-height: 10vh;
-  width: 100%;
+nav {
+  box-shadow: var(--light-shadow);
 }
-
-.menu {
+.nav-header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  min-height: 10vh;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: var(--banner);
-  z-index: 2;
 }
-.menu-list {
-  display: none;
-}
-
-.toggle-btn {
-  display: flex;
-  font-size: 2.5rem;
+.nav-toggle {
+  font-size: 1.5rem;
+  color: var(--text);
+  background: transparent;
+  border-color: transparent;
   transition: var(--transition);
-  font-weight: 600;
+  cursor: pointer;
+}
+.nav-toggle:hover {
+  color: rgb(177, 177, 177);
+  transform: rotate(90deg);
+}
+.logo {
+  height: 40px;
+  font-size: 3rem;
+  font-weight: 700;
   letter-spacing: var(--spacing);
-}
-
-.toggle-btn:hover,
-.toggle-btn ion-icon:hover {
-  font-size: 2.8rem;
-  color: #9b9999;
-  transition: var(--transition);
 }
 
 .pho {
   color: var(--title);
 }
+.links a {
+  color: var(--text);
+  font-size: 2rem;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  display: block;
+  padding: 0.5rem 1rem;
+  transition: var(--transition);
+}
+.links a:hover {
+  color: rgb(177, 177, 177);
+  padding-left: 1.5rem;
+}
 
-@media (min-width: 768px) {
-  .menu {
-    padding: 1rem;
-    display: inline-block;
-    width: 100%;
-    height: auto;
-    min-height: 10vh;
-  }
+.links {
+  height: 0;
+  overflow: hidden;
+  transition: var(--transition);
+}
+.show-links {
+  height: 17rem;
+}
 
-  .menu-list {
+@media screen and (min-width: 768px) {
+  .nav-center {
+    max-width: 1170px;
+    margin: 0 auto;
     display: flex;
-    text-align: center;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem;
   }
-
-  .menu-list li {
-    margin: 1rem;
+  .nav-header {
+    padding: 0;
+  }
+  .nav-toggle {
+    display: none;
+  }
+  .links {
+    height: auto;
+    display: flex;
+    padding: 1rem;
+  }
+  .links a {
+    padding: 0;
+    margin: 0 0.5rem;
     font-size: 2rem;
-    text-transform: capitalize;
+    color: var(--text);
     font-weight: 700;
   }
-  .menu-list li a:hover {
-    color: rgb(184, 184, 184);
-    transition: var(--transition);
+  .links a:hover {
+    padding: 0;
+    background: transparent;
+    color: rgb(177, 177, 177);
   }
 
-  .toggle-btn {
+  .logo {
     display: none;
   }
 }
@@ -245,7 +267,8 @@ ion-icon {
 }
 
 .feature-image {
-  border: 3px solid black;
+  border-radius: var(--radius);
+  border: transparent;
 }
 
 .feature-info {
