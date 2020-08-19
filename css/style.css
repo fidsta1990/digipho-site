@@ -123,6 +123,7 @@ ion-icon {
   left: 0;
   width: 100%;
   background: var(--banner);
+  z-index: 2;
 }
 .menu-list {
   display: none;
@@ -205,6 +206,10 @@ ion-icon {
   margin-bottom: 1rem;
 }
 
+.hero .container .btn {
+  margin-top: 1rem;
+}
+
 @media (min-width: 768px) {
   .hero {
     min-height: 60vh;
@@ -226,13 +231,73 @@ ion-icon {
     text-align: center;
     padding: 1rem 2rem;
   }
-
-  .hero .container .btn {
-    margin-top: 1rem;
-  }
 }
 
 /* end of hero */
+
+/* features */
+.features {
+  min-height: 110vh;
+}
+
+.features h1 {
+  margin-bottom: 3rem;
+}
+
+.feature-image {
+  border: 3px solid black;
+}
+
+.feature-info {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.feature-info p {
+  margin-bottom: 1rem;
+}
+
+.feature-btn {
+  margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+  .feature-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feature-image {
+    height: 100%;
+    width: 100%;
+  }
+  .feature-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0.5rem;
+  }
+
+  .feature-info p {
+    margin-bottom: 1rem;
+    max-width: 45rem;
+  }
+
+  .feature-img {
+    max-width: 55rem;
+    width: 100%;
+    height: 100%;
+    max-height: 40rem;
+    object-fit: cover;
+  }
+
+  .feature-btn {
+    margin-top: 3rem;
+  }
+}
+
+/* end of features */
 
 /* @media (min-width: 768px) {
 } */
